@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    135deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+
+.header {
+  margin: 10vh;
+  display: flex;
+  justify-content: center;
+}
+
+.header h1 {
+  font-size: 4rem;
+  color: white;
+}
+
+#poke-container {
+  display: grid;
+  grid-gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 10%;
+}
+
+.pokemon {
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+}
+
+.pokemon .img-container {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  margin: 10px;
+  text-align: center;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  padding: 10%;
+  border-radius: 20%;
+}
+
+.img-container img {
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10%;
+}
+
+.description-container p-id {
+  font-size: 20px;
+}
+
+.description-container p-name {
+  font-size: 35px;
+}
+
+.description-container p-type {
+  font-size: 25px;
+}

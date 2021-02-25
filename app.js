@@ -1,6 +1,5 @@
 const searchBar = document.getElementById("searchBar");
 const pokeContainer = document.getElementById("poke-container");
-let pokemon = [];
 const pokeNum = 150;
 const colors = {
   fire: "#FDDFDF",
@@ -31,7 +30,7 @@ const pokeFetch = async () => {
 const pokeGet = async (id) => {
   apiUrl = "https://pokeapi.co/api/v2/pokemon/" + id;
   await axios.get(apiUrl).then((res) => {
-    pokemon = res.data;
+    const pokemon = res.data;
     createPokeCard(pokemon);
   });
 };

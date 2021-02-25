@@ -1,4 +1,6 @@
+const searchBar = document.getElementById("searchBar");
 const pokeContainer = document.getElementById("poke-container");
+let pokemon = [];
 const pokeNum = 150;
 const colors = {
   fire: "#FDDFDF",
@@ -29,7 +31,7 @@ const pokeFetch = async () => {
 const pokeGet = async (id) => {
   apiUrl = "https://pokeapi.co/api/v2/pokemon/" + id;
   await axios.get(apiUrl).then((res) => {
-    const pokemon = res.data;
+    pokemon = res.data;
     createPokeCard(pokemon);
   });
 };
@@ -46,7 +48,7 @@ const createPokeCard = (pokemon) => {
 
   pokeElement.style.backgroundColor = color;
 
-  pokeElement.innerHTML = `
+  const pokeInnerHTML = `
   <div class = 'img-container'>
   <img src='https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png'></img>
   </div>
@@ -57,6 +59,7 @@ const createPokeCard = (pokemon) => {
   </div>
     `;
 
+  pokeElement.innerHTML = pokeInnerHTML;
   pokeContainer.appendChild(pokeElement);
 };
 
